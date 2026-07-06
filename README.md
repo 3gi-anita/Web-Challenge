@@ -105,3 +105,11 @@ https://www.figma.com/design/O5PRl1FsvKXLfHVPELGZ6d/Development-Challenge?node-i
 - `totalResults` (5846 in the live payload) reflects the source's total corpus, not how many articles this endpoint actually returns — so I avoided building "showing X of totalResults" messaging that would misrepresent what's actually loaded.
 - Empty string and clearly-malformed values for `urlToImage` are treated the same as missing, not as "a value that happens to render broken."
 
+## What I'd improve with more time
+
+- Match spacing/type/color to the actual Figma file once I have visual access to it.
+- Component-level tests with Vue Test Utils / `@nuxt/test-utils`, in addition to the current pure-function unit tests.
+- Search/filter by source, and a "recently viewed" list — both fit naturally into the Pinia store as genuinely global state.
+- Server-driven pagination if the real API ever supported it (today's "Load more" is a client-side slice, since this mock always returns the same fixed set).
+- `@nuxt/image` for responsive/optimized images once deployed behind a real image CDN.
+- Playwright e2e coverage and a CI workflow running lint/typecheck/test/build on every PR.
