@@ -61,7 +61,7 @@ utils/
   mappers.ts     the api → domain translation layer (the core resilience logic)
 types/
   common.ts    RequestStatus enum, AppError shape
-tests/         Vitest specs for hash/formatters/mappers
+tests/         Vitest specs for hash/formatters
 layouts/default.vue, app.vue, error.vue
 ```
 
