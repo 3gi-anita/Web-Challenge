@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible keyboard focus everywhere — accessibility baseline. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-signal ring-offset-2 ring-offset-paper rounded-sm;
+  }
+
+  ::selection {
+    @apply bg-signal-soft text-signal;
+  }
+}
+
+@layer components {
+  /* Long-form article body copy. */
+  .prose-article {
+    @apply font-serif text-ink leading-relaxed;
+  }
+
+  .prose-article p {
+    @apply mb-5 text-[1.0625rem] leading-[1.75];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
